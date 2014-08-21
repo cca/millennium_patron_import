@@ -64,10 +64,17 @@ for row in csv:
     # (1 is unused & 2 is faculty  department)
     output.write(blanks(2))
 
-    # PCODE 3 with default to null
-    if row['Programs'] in pcode3:
-        output.write(pcode3[row['Programs']])
-    else:
+    # PCODE 3 with default to empty string
+    # PCODE 3 is a little more complicated because the Informer export
+    # contains multiple comma-separated values in a single field. Below,
+    # we parse the values into a list and find out which ones are in our
+    # PCODE 3 mapping, then add the first available one to the record.
+    programs = row['Programs'].split(', ')
+    matches = [pcode3[program] for program in programs if program in pcode3]
+    try:
+        output.write(matches[0])
+    # no matches
+    except IndexError:
         output.write(blanks(3))
 
     # Home Library (5 chars), Message Code (1), & Block Code (1)
