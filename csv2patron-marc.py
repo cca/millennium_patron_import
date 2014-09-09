@@ -85,7 +85,7 @@ for row in csv:
     output.write(args.expiry + '\n')
 
     output.write('n' + row['Family Name'] + ', ' + row['Given Name'] + '\n')
-    # not worth recording telephone, per Nancy on 7/10/14
+    # not worth recording telephone as it's often the parents'
     # output.write('t' + row['Home Phone'] + '\n')
     output.write('u' + row['ID'] + '\n')  # student ID
     output.write('z' + row['CCA Email'] + '\n')  # email
