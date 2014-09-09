@@ -1,6 +1,6 @@
 # Bulk Import Patron Data into Millennium ILS
 
-Outline of adding new patrons before the semester:
+CCA's outline of adding new patrons before the semester:
 
 - Run Informer report to get new student list in CSV format
 - Use "csv2patron-marc.py" to convert the CSV into a MARC-like format
@@ -22,15 +22,19 @@ Highlight the newly loaded file & choose Tools > Prep > "PREPROCESS TEXT Patron 
 
 ## Overlaying Records
 
-Records are overlaid based on the "UNIV ID" (u) field. The logic is as such:
+These are settings you can specify with Innovative. Below are the details of CCA specific setup.
 
-If no patron record with the same u exists, create a new record
-If a patron with the same u exists, new data existing in the import file overwrites data in the current record
-If two patrons with the same u exist, create a new record. Note that this is theoretically impossible as u fields are unique.
+Records are overlaid based on the "UNIV ID" (`u`) field. The logic is as such:
+
+- If no patron record with the same `u` exists, create a new record
+- If a patron record with the same `u` exists, all fields in the old record are discarded & new data from import inserted but associated data like checkouts & fines persist (**NOTE**: we need to look into changing this, ideally fields in the old record not contained in the new one would not be discarded)
+- If 2 patrons with the same `u` exist, create a new (now 3rd) record. Note that this is theoretically impossible as `u` fields are unique.
 
 ## Testing
 
-Included in the .zip attachment is a sample CSV export from Informer which can be used for test runs. You can use the "Test Import Patrons" review file to mass delete these records after testing. If that review file was overwritten, it's simply:
+Included is a sample CSV export from Informer which can be used for test runs.
+
+In CCA's Millennium, the "Test Import Patrons" review file can delete these records after testing. If that review file was overwritten, it's simply:
 
 ```sql
 PATRON  PATRN NAME  starts with  "ZTEST"
@@ -38,7 +42,7 @@ PATRON  PATRN NAME  starts with  "ZTEST"
 
 ## Customizing Further
 
-We do not currently use several of the fixed-length fields in a patron record, such as "Home Library". Extending the current script to handle these should be simple:
+CCA does not currently use several of the fixed-length fields in a patron record, such as "Home Library". Extending the current script to handle these isn't hard:
 
 - Add a dict in mapping.py where CSV value keys are matched with patron record values, e.g. `homelib = { 'LoC': '00001'… }`
 - Import the dict on the `from mapping import…` line
