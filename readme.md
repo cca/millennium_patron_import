@@ -58,4 +58,7 @@ Relevant manual pages:
 107503 "Importing Patron Data"
 http://gsm.iii.com/data2_6.html
 http://gsm.iii.com/data3_1.html
-# LICENSE\n\n[Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)\n
+
+# LICENSE
+
+[Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
