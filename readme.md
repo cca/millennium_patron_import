@@ -51,13 +51,13 @@ CCA does not currently use several of the fixed-length fields in a patron record
 ## Links & Documentation
 
 Relevant manual pages: 
-101688 "Loading Patron Records" (load tables)
-101871 "Edit overlay protection list"
-106003 "Preprocessing Files for Import in Data Exchange"
-106004 "Loading Records in Data Exchange"
-107503 "Importing Patron Data"
-http://gsm.iii.com/data2_6.html
-http://gsm.iii.com/data3_1.html
+- 101688 "Loading Patron Records" (load tables)
+- 101871 "Edit overlay protection list"
+- 106003 "Preprocessing Files for Import in Data Exchange"
+- 106004 "Loading Records in Data Exchange"
+- 107503 "Importing Patron Data"
+- http://gsm.iii.com/data2_6.html
+- http://gsm.iii.com/data3_1.html
 
 # LICENSE
 
