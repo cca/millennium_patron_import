@@ -50,7 +50,7 @@ CCA does not currently use several of the fixed-length fields in a patron record
 
 ## Links & Documentation
 
-Relevant manual pages: 
+Relevant manual pages:
 - 101688 "Loading Patron Records" (load tables)
 - 101871 "Edit overlay protection list"
 - 106003 "Preprocessing Files for Import in Data Exchange"
