@@ -27,8 +27,8 @@ parser = argparse.ArgumentParser(
     description='Convert Informer export CSV into' +
     ' text file ready for import into Millennium')
 parser.add_argument('file', type=str, help='CSV from Informer')
-parser.add_argument('semester', type=str, choices=['F', 'sp', 'Su'],
-                    help='Season of present semester')
+parser.add_argument('term', type=str, choices=['F', 'sp', 'Su', 'PC'],
+                    help='Term or season of present semester')
 parser.add_argument('-o', '--out', type=str, default='import.txt',
                     help='Name for output file')
 # hard-coding in Fall 2014 expiration as default
@@ -58,6 +58,7 @@ for row in csv:
     if row['Academic Level'] in ptype:
         output.write(ptype[row['Academic Level']])
     else:
+        # for CCA pre-college: change this fallback to '008' ("Special")
         output.write(blanks(3))
 
     # PCODE 1 & 2 are not relevant for students
@@ -90,7 +91,7 @@ for row in csv:
     output.write('u' + row['ID'] + '\n')  # student ID
     output.write('z' + row['CCA Email'] + '\n')  # email
     # note - we put in what semester the record was created
-    output.write('x' + args.semester + yr + '\n')
+    output.write('x' + args.term + yr + '\n')
 
 # wrapping up
 output.close()
