@@ -23,9 +23,9 @@ from mapping import ptype, pcode3  # PCODE mappings, etc.
 import datetime
 import argparse  # docs.python.org/2.7/library/argparse.html
 
-parser = argparse.ArgumentParser(description='Convert Informer export CSV into'
-                                 + ' text file ready for import into '
-                                 + 'Millennium')
+parser = argparse.ArgumentParser(
+    description='Convert Informer export CSV into' +
+    ' text file ready for import into Millennium')
 parser.add_argument('file', type=str, help='CSV from Informer')
 parser.add_argument('semester', type=str, choices=['F', 'sp', 'Su'],
                     help='Season of present semester')

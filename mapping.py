@@ -1,6 +1,9 @@
 # See Millennium Circulation > Admin > Parameters > Circulation > Patron Type
 # 3-digit, 000 to 255
-ptype = {'UG': '001', 'GR': '002'}
+ptype = {
+    'UG': '001',
+    'GR': '002'
+}
 
 # See Millennium Circulation > Admin > Parameters > Circulation > Pcode 3
 # 3-digit, 000 to 255
