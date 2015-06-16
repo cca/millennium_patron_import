@@ -33,7 +33,7 @@ parser.add_argument('-o', '--out', type=str, default='import.txt',
                     help='Name for output file')
 # hard-coding in Fall 2014 expiration as default
 parser.add_argument('-e', '--expiry', type=str, default='12-12-14',
-                    help='Patron record expiration date')
+                    help='Patron record expiration date in MM-DD-YY format')
 args = parser.parse_args()
 
 # used later to construct notes
