@@ -18,7 +18,7 @@ Where _output.txt_ is the name of the file you want created, _12-25-14_ is the e
 
 Inside Millennium Circulation, select the Data Exchange section & then Select Process "Load MARC Patron records from tape or FTS (pta)". Click **Get PC** to browse your hard drive for the import file & **choose the "ptfs" extension** (important!).
 
-Highlight the newly loaded file & choose Tools > Prep > "PREPROCESS TEXT Patron records loaded via FTS", then click **Start**. A brief message appears as Millennium processes the records & when you close the dialog there will be a ".pat" file listed. Select the .pat, then Tools > Load > Load a MARC file (or just click **Load** in the upper right). Here you can first **Test** the MARC file, which provides warnings about improper PCODEs & such. Then, if the test is successful, hit **Load** to import the patron records.
+Highlight the newly loaded file & click **Prep** from the upper right menu, then **Start**. A brief message appears as Millennium processes the records & when you **Close** the dialog there will be a ".pat" file listed. Select the .pat, then click **Load**. Here you can first **Test** the MARC file, which provides warnings about improper PCODEs & such. Then, if the test is successful, click **Load** to import the records.
 
 ## Overlaying Records
 
