@@ -1,11 +1,4 @@
 #!/usr/bin/env python
-##########################################
-#                                        #
-#           csv2patron-marc.py           #
-#           by Eric Phetteplace          #
-# California College of the Arts, 2014   #
-#                                        #
-##########################################
 #
 # This script takes a CSV export from Informer and maps it
 # into a format appropriate for import into Millennium.
@@ -41,9 +34,23 @@ yr = str(datetime.date.today().year)[2:]
 
 
 def blanks(i):
-    # Return i number of blank spaces
-    # Used in places where reading number of blanks is tough
+    """
+    Return i number of blank spaces
+    Used in places where reading number of blanks is tough
+    """
     return ''.join(' ' * i)
+
+
+def name(row):
+    """
+    Determine the best name form to use for a given person's row
+    Logic: if pref name, use it, otherwise combine given + surnames
+    """
+    if row['Preferred Name'] != '':
+        return row['Preferred Name']
+    else:
+        return row['Family Name'] + ', ' + row['Given Name']
+
 
 # files
 reader = csv.DictReader(open(args.file, 'r'))
@@ -85,7 +92,7 @@ for row in reader:
     # Expiration Date, end of fixed-length fields
     output.write(args.expiry + '\n')
 
-    output.write('n' + row['Family Name'] + ', ' + row['Given Name'] + '\n')
+    output.write('n' + name(row) + '\n')
     # not worth recording telephone as it's often the parents'
     # output.write('t' + row['Home Phone'] + '\n')
     output.write('u' + row['ID'] + '\n')  # student ID
