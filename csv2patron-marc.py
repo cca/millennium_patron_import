@@ -46,10 +46,10 @@ def blanks(i):
     return ''.join(' ' * i)
 
 # files
-csv = csv.DictReader(open(args.file, 'r'))
+reader = csv.DictReader(open(args.file, 'r'))
 output = open(args.out, 'w')
 
-for row in csv:
+for row in reader:
     # "zero field"
     output.write('0')
 
