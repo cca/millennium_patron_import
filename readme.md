@@ -14,9 +14,9 @@ Run Informer Report "LIB-EP New Students for ILS Import" & set the Start Term to
 python csv2patron-marc.py -o output.txt -e 12-25-14 input.csv F
 ```
 
-Where _output.txt_ is the name of the file you want created, _12-25-14_ is the expiration date for the created patron records, _input.csv_ is the Informer report used as input, & _F_ is the shortened form of the semester's season (one of F, sp, or Su). All of this information is contained in the help flag of csv2patron-marc.py; run `python csv2patron-marc.py -h`. If your file names have spaces in them, you can wrap them in quotation marks.
+Where _output.txt_ is the name of the file you want created, _12-25-14_ is the expiration date for the created patron records, _input.csv_ is the Informer report used as input, & _F_ is the shortened form of the semester's season (one of F, sp, Su, or PC). All of this information is contained in the help flag of csv2patron-marc.py; run `python csv2patron-marc.py -h`. If your file names have spaces in them, you can wrap them in quotation marks.
 
-Inside Millennium Circulation, select the Data Exchange section & then Select Process "Load MARC Patron records from tape or FTS (pta)". Click **Get PC** to browse your hard drive for the import file & **choose the "ptfs" extension** (important!).
+Inside Millennium Circulation, select **Data Exchange** & then Select Process "Load MARC Patron records from tape or FTS (pta)". Click **Get PC** to browse your hard drive for the import file & **choose the "ptfs" extension** (important!).
 
 Highlight the newly loaded file & click **Prep** from the upper right menu, then **Start**. A brief message appears as Millennium processes the records & when you **Close** the dialog there will be a ".pat" file listed. Select the .pat, then click **Load**. Here you can first **Test** the MARC file, which provides warnings about improper PCODEs & such. Then, if the test is successful, click **Load** to import the records.
 
@@ -61,4 +61,4 @@ Relevant manual pages:
 
 # LICENSE
 
-[Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+[ECL Version 2.0](https://opensource.org/licenses/ECL-2.0)
